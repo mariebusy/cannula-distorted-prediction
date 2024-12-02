@@ -18,7 +18,7 @@ if st.button("Predict"):
     # Make the prediction using the loaded model
     prediction = model.predict(input_features)[0]
     # Display the result
-    if prediction == 1:  # Assuming 1 means Defected
-st.error("The Cannula is Distorted: Defected")
+if prediction == 1:  # Assuming 1 means Defected
+       st.error("The Cannula is Distorted: Defected")
 else: # Assuming 0 means Not Defected
-st.success("The Cannula is Not Distorted: No Defect")
+       st.success("The Cannula is Not Distorted: No Defect")
