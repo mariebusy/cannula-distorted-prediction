@@ -1,6 +1,6 @@
 import streamlit as st
 import numpy as np
-import pickle'
+import pickle
 from sklearn.datasets import cannula_distorted_2
 from sklearn.ensemble import RandomForestClassifier
 def load_model():
