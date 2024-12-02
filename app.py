@@ -2,7 +2,7 @@ import streamlit as st
 import numpy as np
 import pickle
 # Load the pre-trained model (saved_model.pkl)
-with open('saved_steps.pkl', 'r') as file:
+with open('saved_steps.pkl', 'rb') as file:
     model = pickle.load(file)
 # Streamlit app
 st.title("Prediction of Cannula Distorted")
