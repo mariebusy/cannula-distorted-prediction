@@ -3,7 +3,7 @@ import numpy as np
 import pickle
 # Load the pre-trained model (make sure you have saved your model as 'saved_model.pkl')
 # Uncomment the next line if you have a model file
-# model = pickle.load(open('saved_model.pkl', 'rb'))
+model = pickle.load(open('saved_steps.pkl', 'rb'))
 # Streamlit app
 st.title("Prediction of Cannula Distorted")
 # Data entry boxes for input features
