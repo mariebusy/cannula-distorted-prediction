@@ -7,7 +7,7 @@ def load_model():
     return data
 
 data = load_model()
-
+rfc = data["model"]
 # Streamlit app
 st.title("Prediction of Cannula Distorted")
 # Data entry boxes for input features
