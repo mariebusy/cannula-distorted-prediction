@@ -1,6 +1,7 @@
 import streamlit as st
 import numpy as np
-import pickle
+import pickle'
+from sklearn.datasets import cannula_distorted_2
 def load_model():
     with open('saved_steps.pkl', 'rb') as file:
         data = pickle.load(file)
