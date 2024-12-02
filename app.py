@@ -1,9 +1,9 @@
 import streamlit as st
 import numpy as np
 import pickle
-# Load the pre-trained model (make sure you have saved your model as 'saved_model.pkl')
-# Uncomment the next line if you have a model file
-model = pickle.load(open('saved_model.pkl', 'rb'))
+# Load the pre-trained model (saved_model.pkl)
+with open('saved_model.pkl', 'rb') as file:
+    model = pickle.load(file)
 # Streamlit app
 st.title("Prediction of Cannula Distorted")
 # Data entry boxes for input features
@@ -15,13 +15,10 @@ electro_fission = st.number_input("Electro Fission", min_value=0.0, format="%.2f
 if st.button("Predict"):
     # Prepare the input features for prediction
     input_features = np.array([[drawing, bright_annealing, sinking, electro_fission]])
-    # Uncomment the following line when the model is loaded
+    # Make the prediction using the loaded model
     prediction = model.predict(input_features)[0]
-    # Dummy prediction for demonstration purposes
-    prediction = np.random.choice(["Defected", "Not Defected"])  # Replace with model prediction
     # Display the result
-if prediction == "Defected":
+    if prediction == 1:  # Assuming 1 means Defected
 st.error("The Cannula is Distorted: Defected")
-else:
+else: # Assuming 0 means Not Defected
 st.success("The Cannula is Not Distorted: No Defect")
-
